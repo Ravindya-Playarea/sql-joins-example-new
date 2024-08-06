@@ -10,3 +10,8 @@ CREATE TABLE enrolment(
                           CONSTRAINT fk_student FOREIGN KEY (student_id) REFERENCES student (id),
                           CONSTRAINT fk_batch FOREIGN KEY (batch_number) REFERENCES batch (batch_number)
 );
+
+CREATE TABLE batch(
+                      batch_number VARCHAR(10)PRIMARY KEY,
+                      program_id VARCHAR(10)NOT NULL
+);

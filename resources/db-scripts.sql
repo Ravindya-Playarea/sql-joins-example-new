@@ -22,4 +22,5 @@ CREATE TABLE module(
                        credits INT NOT NULL,
                        program_id VARCHAR(10),
                        FOREIGN KEY (program_id) REFERENCES Program(id)
+
 );

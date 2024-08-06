@@ -15,3 +15,11 @@ CREATE TABLE batch(
                       batch_number VARCHAR(10)PRIMARY KEY,
                       program_id VARCHAR(10)NOT NULL
 );
+
+CREATE TABLE module(
+                       id VARCHAR(10) PRIMARY KEY,
+                       name VARCHAR(100) NOT NULL,
+                       credits INT NOT NULL,
+                       program_id VARCHAR(10),
+                       FOREIGN KEY (program_id) REFERENCES Program(id)
+);

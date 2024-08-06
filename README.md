@@ -1,12 +1,9 @@
 
 ### First clone the project
 ### Then run the Docker container using 'docker compose up'
-### Create the Database
-  - as url - <DataBase name>?CreateDatabaseIfNotExist=true
-  - give 6000 as the port
-  - give root as username
-  - give mysql as password
-### Then create the Database
-### Then select the dialect as sql
+### Now create the Database
+### First Open Terminal and run following commands 
+  - `CREATE DATABASE db_sms`
+  - `mysql -u root -P 6000 -D db_sms`
 ### Then run the db-script.sql
 

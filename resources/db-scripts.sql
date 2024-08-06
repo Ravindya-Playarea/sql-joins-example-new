@@ -80,34 +80,24 @@ CREATE TABLE student_exam(
                              CONSTRAINT fk_enrolment FOREIGN KEY (student_id, btach_id) REFERENCES enrolment (student_id, batch_number) ,
 );
 
-INSERT INTO program_module(program_id, module_id) VALUES
-                                                      ('CMJD', 'M001'),
-                                                      ('CMJD', 'M002'),
-                                                      ('CMJD', 'M003'),
-                                                      ('CMJD', 'M004'),
-                                                      ('CMJD', 'M005'),
-                                                      ('CMJD', 'M006'),
-                                                      ('CMJD', 'M007'),
-                                                      ('CMJD', 'M008'),
-                                                      ('CMJD', 'M009'),
-                                                      ('CMJD', 'M010'),
-                                                      ('DEP', 'M001'),
-                                                      ('DEP', 'M002'),
-                                                      ('DEP', 'M003'),
-                                                      ('DEP', 'M004'),
-                                                      ('DEP', 'M005'),
-                                                      ('DEP', 'M006'),
-                                                      ('DEP', 'M007'),
-                                                      ('DEP', 'M008'),
-                                                      ('DEP', 'M009'),
-                                                      ('DEP', 'M010'),
-                                                      ('GDSE', 'M001'),
-                                                      ('GDSE', 'M002'),
-                                                      ('GDSE', 'M003'),
-                                                      ('GDSE', 'M004'),
-                                                      ('GDSE', 'M005'),
-                                                      ('GDSE', 'M006'),
-                                                      ('GDSE', 'M007'),
-                                                      ('GDSE', 'M008'),
-                                                      ('GDSE', 'M009'),
-                                                      ('GDSE', 'M010');
+INSERT INTO student_exam (student_id, batch_id, exam_code, marks) VALUES ('S001', 'B001', 'EX-001', 85);
+INSERT INTO student_exam (student_id, batch_id, exam_code, marks) VALUES ('S002', 'B002', 'EX-002', 78);
+INSERT INTO student_exam (student_id, batch_id, exam_code, marks) VALUES ('S003', 'B003', 'EX-003', 90);
+INSERT INTO student_exam (student_id, batch_id, exam_code, marks) VALUES ('S004', 'B004', 'EX-004', 87);
+INSERT INTO student_exam (student_id, batch_id, exam_code, marks) VALUES ('S005', 'B005', 'EX-005', 92);
+INSERT INTO student_exam (student_id, batch_id, exam_code, marks) VALUES ('S006', 'B006', 'EX-006', 74);
+INSERT INTO student_exam (student_id, batch_id, exam_code, marks) VALUES ('S007', 'B007', 'EX-007', 81);
+INSERT INTO student_exam (student_id, batch_id, exam_code, marks) VALUES ('S008', 'B008', 'EX-008', 88);
+INSERT INTO student_exam (student_id, batch_id, exam_code, marks) VALUES ('S009', 'B009', 'EX-009', 93);
+INSERT INTO student_exam (student_id, batch_id, exam_code, marks) VALUES ('S010', 'B010', 'EX-010', 76);
+
+INSERT INTO student_exam (student_id, batch_id, exam_code, marks) VALUES ('S001', 'B001', 'EX-002', 79);
+INSERT INTO student_exam (student_id, batch_id, exam_code, marks) VALUES ('S002', 'B002', 'EX-003', 82);
+INSERT INTO student_exam (student_id, batch_id, exam_code, marks) VALUES ('S003', 'B003', 'EX-004', 89);
+INSERT INTO student_exam (student_id, batch_id, exam_code, marks) VALUES ('S004', 'B004', 'EX-005', 95);
+INSERT INTO student_exam (student_id, batch_id, exam_code, marks) VALUES ('S005', 'B005', 'EX-006', 77);
+INSERT INTO student_exam (student_id, batch_id, exam_code, marks) VALUES ('S006', 'B006', 'EX-007', 84);
+INSERT INTO student_exam (student_id, batch_id, exam_code, marks) VALUES ('S007', 'B007', 'EX-008', 91);
+INSERT INTO student_exam (student_id, batch_id, exam_code, marks) VALUES ('S008', 'B008', 'EX-009', 86);
+INSERT INTO student_exam (student_id, batch_id, exam_code, marks) VALUES ('S009', 'B009', 'EX-010', 94);
+INSERT INTO student_exam (student_id, batch_id, exam_code, marks) VALUES ('S010', 'B010', 'EX-001', 75);

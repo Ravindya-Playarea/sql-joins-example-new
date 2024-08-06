@@ -5,14 +5,15 @@ CREATE TABLE student(
 
 CREATE TABLE enrolment(
                           student_id VARCHAR(10) NOT NULL,
-                          batch_number VARCHAR(10) NOT NULL ,
-                          CONSTRAINT pk_enrolment PRIMARY KEY (student_id,batch_number),
+                          batch_id VARCHAR(10) NOT NULL ,
+                          CONSTRAINT pk_enrolment PRIMARY KEY (student_id,batch_id),
                           CONSTRAINT fk_student FOREIGN KEY (student_id) REFERENCES student (id),
-                          CONSTRAINT fk_batch FOREIGN KEY (batch_number) REFERENCES batch (batch_number)
+                          CONSTRAINT fk_batch FOREIGN KEY (batch_id) REFERENCES batch (id)
 );
 
 CREATE TABLE batch(
-                      batch_number VARCHAR(10)PRIMARY KEY,
+                      id VARCHAR(10) PRIMARY KEY ,
+                      batch_number VARCHAR(10),
                       program_id VARCHAR(10)NOT NULL
 );
 
@@ -45,31 +46,31 @@ CREATE TABLE exam(
                      CONSTRAINT fk_exam FOREIGN KEY (module_id) REFERENCES module(id)
 );
 
-INSERT INTO program
+INSERT INTO program (program_id, name) VALUES
 ('P001', 'DEP'),
             ('P002', 'CMJD'),
             ('P003', 'GDSE');
 
-INSERT INTO enrolment (student_id, batch_number) VALUES ('S001', 'B001');
-INSERT INTO enrolment (student_id, batch_number) VALUES ('S002', 'B002');
-INSERT INTO enrolment (student_id, batch_number) VALUES ('S003', 'B003');
-INSERT INTO enrolment (student_id, batch_number) VALUES ('S004', 'B004');
-INSERT INTO enrolment (student_id, batch_number) VALUES ('S005', 'B005');
-INSERT INTO enrolment (student_id, batch_number) VALUES ('S006', 'B006');
-INSERT INTO enrolment (student_id, batch_number) VALUES ('S007', 'B007');
-INSERT INTO enrolment (student_id, batch_number) VALUES ('S008', 'B008');
-INSERT INTO enrolment (student_id, batch_number) VALUES ('S009', 'B009');
-INSERT INTO enrolment (student_id, batch_number) VALUES ('S010', 'B010');
-INSERT INTO enrolment (student_id, batch_number) VALUES ('S011', 'B011');
-INSERT INTO enrolment (student_id, batch_number) VALUES ('S012', 'B012');
-INSERT INTO enrolment (student_id, batch_number) VALUES ('S013', 'B013');
-INSERT INTO enrolment (student_id, batch_number) VALUES ('S014', 'B014');
-INSERT INTO enrolment (student_id, batch_number) VALUES ('S015', 'B015');
-INSERT INTO enrolment (student_id, batch_number) VALUES ('S016', 'B016');
-INSERT INTO enrolment (student_id, batch_number) VALUES ('S017', 'B017');
-INSERT INTO enrolment (student_id, batch_number) VALUES ('S018', 'B018');
-INSERT INTO enrolment (student_id, batch_number) VALUES ('S019', 'B019');
-INSERT INTO enrolment (student_id, batch_number) VALUES ('S020', 'B020');
+INSERT INTO enrolment (student_id, batch_id) VALUES ('S001', 'B001');
+INSERT INTO enrolment (student_id, batch_id) VALUES ('S002', 'B002');
+INSERT INTO enrolment (student_id, batch_id) VALUES ('S003', 'B003');
+INSERT INTO enrolment (student_id, batch_id) VALUES ('S004', 'B004');
+INSERT INTO enrolment (student_id, batch_id) VALUES ('S005', 'B005');
+INSERT INTO enrolment (student_id, batch_id) VALUES ('S006', 'B006');
+INSERT INTO enrolment (student_id, batch_id) VALUES ('S007', 'B007');
+INSERT INTO enrolment (student_id, batch_id) VALUES ('S008', 'B008');
+INSERT INTO enrolment (student_id, batch_id) VALUES ('S009', 'B009');
+INSERT INTO enrolment (student_id, batch_id) VALUES ('S010', 'B010');
+INSERT INTO enrolment (student_id, batch_id) VALUES ('S011', 'B011');
+INSERT INTO enrolment (student_id, batch_id) VALUES ('S012', 'B012');
+INSERT INTO enrolment (student_id, batch_id) VALUES ('S013', 'B013');
+INSERT INTO enrolment (student_id, batch_id) VALUES ('S014', 'B014');
+INSERT INTO enrolment (student_id, batch_id) VALUES ('S015', 'B015');
+INSERT INTO enrolment (student_id, batch_id) VALUES ('S016', 'B016');
+INSERT INTO enrolment (student_id, batch_id) VALUES ('S017', 'B017');
+INSERT INTO enrolment (student_id, batch_id) VALUES ('S018', 'B018');
+INSERT INTO enrolment (student_id, batch_id) VALUES ('S019', 'B019');
+INSERT INTO enrolment (student_id, batch_id) VALUES ('S020', 'B020');
 
 CREATE TABLE student_exam(
                              student_id VARCHAR(10) NOT NULL,
@@ -101,3 +102,27 @@ INSERT INTO student_exam (student_id, batch_id, exam_code, marks) VALUES ('S007'
 INSERT INTO student_exam (student_id, batch_id, exam_code, marks) VALUES ('S008', 'B008', 'EX-009', 86);
 INSERT INTO student_exam (student_id, batch_id, exam_code, marks) VALUES ('S009', 'B009', 'EX-010', 94);
 INSERT INTO student_exam (student_id, batch_id, exam_code, marks) VALUES ('S010', 'B010', 'EX-001', 75);
+
+INSERT INTO module (id, name, credits, program_id) VALUES
+                                                       ('M001', 'java', '70','DEP'),
+                                                       ('M002', 'sql', '89','CMJD'),
+                                                       ('M003', 'c#', '45','GDSE'),
+                                                       ('M004', '.Net', '78','DEP'),
+                                                       ('M005', 'Mongodb', '90','DEP'),
+                                                       ('M006', 'git', '89','CMJD'),
+                                                       ('M007', 'postgre sql', '90','CMJD'),
+                                                       ('M008', 'postman', '56','GDSE'),
+                                                       ('M009', 'docker', '89','GDSE'),
+                                                       ('M010', 'firebase', '78','DEP');
+
+
+
+
+
+
+INSERT INTO batch(batch_id,batch_number,program_id)VALUES
+                                              ('B001','1','DEP'),
+                                              ('B002','2','DEP'),
+                                              ('B003','102','CMJD'),
+                                              ('B004','97','GDSE'),
+                                              ('B005','103','CMJD');
